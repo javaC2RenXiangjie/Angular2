@@ -1,7 +1,7 @@
 import {
   Component,
   OnInit,
-
+  Input
 } from '@angular/core';
 
 import { Article } from './article.model';
@@ -16,15 +16,7 @@ import { Article } from './article.model';
 })
 export class ArticleComponent implements OnInit {
 
-  article: Article;
-
-  constructor() {
-    this.article = new Article(
-      'angular2',
-      'www.baidu.com',
-      10
-    )
-  }
+  @Input() article: Article;
 
   voteUp(): boolean {
     this.article.voteUp();
